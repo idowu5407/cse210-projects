@@ -1,6 +1,7 @@
 // Class representing an individual word in scripture
 class Word
 {
+    // Represents a word in the scripture, which can be hidden or displayed
     private string _text;
     private bool _isHidden;
 
@@ -10,8 +11,10 @@ class Word
         _isHidden = false;
     }
 
+    // Property to get the text of the word
     public bool IsHidden => _isHidden;
 
+    // Method to hide the word
     public void Hide()
     {
         _isHidden = true;

@@ -20,8 +20,8 @@ class Program
 
             if (input.ToLower() == "quit")
                 return;
-
-            selectedScripture.HideRandomWords(3); // Hide 3 random words
+            // Hide 3 random words
+            selectedScripture.HideRandomWords(3); 
         }
 
         // Final display when all words are hidden

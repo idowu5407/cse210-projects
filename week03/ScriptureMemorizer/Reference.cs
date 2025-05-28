@@ -6,6 +6,8 @@ class Reference
     public int VerseStart { get; private set; }
     public int? VerseEnd { get; private set; }
 
+    
+    // Initializes a scripture reference with a book, chapter, and verse.
     public Reference(string book, int chapter, int verse)
     {
         Book = book;
@@ -14,6 +16,7 @@ class Reference
         VerseEnd = null;
     }
 
+    // Constructor for a range of verses
     public Reference(string book, int chapter, int verseStart, int verseEnd)
     {
         Book = book;
@@ -22,6 +25,8 @@ class Reference
         VerseEnd = verseEnd;
     }
 
+    
+    // Parses a scripture reference string into a Reference object.
     public static Reference Parse(string referenceStr)
     {
         var parts = referenceStr.Split(' ');
@@ -29,6 +34,7 @@ class Reference
         string[] verseParts = parts[1].Split(':');
         int chapter = int.Parse(verseParts[0]);
 
+        // Check if the verse part contains a range or a single verse
         if (verseParts[1].Contains('-'))
         {
             var range = verseParts[1].Split('-');
@@ -40,6 +46,7 @@ class Reference
         }
     }
 
+    // Returns a string representation of the scripture reference.
     public override string ToString()
     {
         return VerseEnd.HasValue

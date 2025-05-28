@@ -6,12 +6,14 @@ class Scripture
     private List<Word> _words;
     private Random _random = new Random();
 
+    // Initializes a scripture with a reference and text, splitting the text into words
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
         _words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
 
+    // Displays the scripture reference and the words, hiding those that are marked as hidden
     public void Display()
     {
         Console.WriteLine(_reference.ToString());
@@ -21,6 +23,7 @@ class Scripture
         }
     }
 
+    // Hides a specified number of random words in the scripture
     public void HideRandomWords(int count)
     {
         var visibleWords = _words.Where(w => !w.IsHidden).ToList();
@@ -32,8 +35,9 @@ class Scripture
         }
     }
 
+    // Checks if all words in the scripture are hidden
     public bool AllWordsHidden()
     {
         return _words.All(w => w.IsHidden);
-    }
+    }
 }
