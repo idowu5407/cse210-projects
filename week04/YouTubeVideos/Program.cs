@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 class Program
 {
@@ -7,24 +6,24 @@ class Program
     {
         // Create some videos
         var video1 = new Video("Come follow me", "Alice Johnson", 600);
-        video1.AddComment(new Comment("Idowu", "Great explanation!"));
+        video1.AddComment(new Comment("Idowu", "Word of the Savour!"));
         video1.AddComment(new Comment("Sunday", "Thanks for the video."));
         video1.AddComment(new Comment("Mike", "Really helpful!"));
 
-        var video2 = new Video("Crown", "Hillsong", 450);
-        video2.AddComment(new Comment("Linda", "Looks delicious!"));
-        video2.AddComment(new Comment("Tom", "I’ll try this today."));
-        video2.AddComment(new Comment("Anna", "Thanks for sharing!"));
+        var video2 = new Video("Looking up to God", "Chef Emma", 450);
+        video2.AddComment(new Comment("segun", "It fill with spirit of God!"));
+        video2.AddComment(new Comment("Taye", "I’ll try listen."));
+        video2.AddComment(new Comment("Hanna", "Thanks for sharing!"));
 
-        var video3 = new Video("Top 10 Travel Destinations", "TravelWithMe", 720);
+        var video3 = new Video("Nigeria the Great Nation", "TravelWithMe", 720);
         video3.AddComment(new Comment("Chris", "I’ve been to #3, it’s amazing."));
-        video3.AddComment(new Comment("Ade", "Adding these to my bucket list."));
-        video3.AddComment(new Comment("Samson", "Awesome picks!"));
+        video3.AddComment(new Comment("Jade", "Adding these to my bucket list."));
+        video3.AddComment(new Comment("Odun", "Awesome Country!"));
 
-        var video4 = new Video("Lion King", "Sam Strings", 300);
-        video4.AddComment(new Comment("Nina", "Clear and easy to follow."));
-        video4.AddComment(new Comment("Mark", "Nice chords breakdown."));
-        video4.AddComment(new Comment("Alex", "This helped a lot."));
+        var video4 = new Video("Black the Beauty", "Oluwatobi Strings", 300);
+        video4.AddComment(new Comment("Nina", "Clear and easy to identify."));
+        video4.AddComment(new Comment("Mark", "Our beauty is natural and pure."));
+        video4.AddComment(new Comment("Alex", "There is always beauty in black."));
 
         // Store videos in a list
         List<Video> videos = new List<Video> { video1, video2, video3, video4 };
@@ -32,14 +31,14 @@ class Program
         // Display each video and its comments
         foreach (var video in videos)
         {
-            Console.WriteLine($"Title: {video.Title}");
-            Console.WriteLine($"Author: {video.Author}");
-            Console.WriteLine($"Length: {video.LengthInSeconds} seconds");
+            Console.WriteLine($"Title: {video.GetTitle()}");
+            Console.WriteLine($"Author: {video.GetAuthor()}");
+            Console.WriteLine($"Length: {video.GetLengthInSeconds()} seconds");
             Console.WriteLine($"Number of Comments: {video.GetNumberOfComments()}");
             Console.WriteLine("Comments:");
-            foreach (var comment in video.Comments)
+            foreach (var comment in video.GetComments())
             {
-                Console.WriteLine($"- {comment.CommenterName}: {comment.Text}");
+                Console.WriteLine($"- {comment.GetCommenterName()}: {comment.GetText()}");
             }
             Console.WriteLine(new string('-', 40));
         }

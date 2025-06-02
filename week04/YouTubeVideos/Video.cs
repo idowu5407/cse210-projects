@@ -1,25 +1,48 @@
 class Video
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int LengthInSeconds { get; set; }
-    public List<Comment> Comments { get; private set; }
+    // Represents a video with a title, author, length, and comments
+    private string _title;
+    private string _author;
+    private int _lengthInSeconds;
+    private List<Comment> _comments;
 
+    // Constructor to initialize the video with title, author, and length
     public Video(string title, string author, int lengthInSeconds)
     {
-        Title = title;
-        Author = author;
-        LengthInSeconds = lengthInSeconds;
-        Comments = new List<Comment>();
+        _title = title;
+        _author = author;
+        _lengthInSeconds = lengthInSeconds;
+        _comments = new List<Comment>();
     }
 
+    // Method to add a comment to the video
     public void AddComment(Comment comment)
     {
-        Comments.Add(comment);
+        _comments.Add(comment);
     }
 
     public int GetNumberOfComments()
     {
-        return Comments.Count;
+        return _comments.Count;
+    }
+
+    public string GetTitle()
+    {
+        return _title;
+    }
+
+    public string GetAuthor()
+    {
+        return _author;
+    }
+
+    public int GetLengthInSeconds()
+    {
+        return _lengthInSeconds;
+    }
+
+    public List<Comment> GetComments()
+    {
+        return _comments;
     }
 }
