@@ -22,7 +22,7 @@ class Word
 
     public override string ToString()
     {
-        return IsHidden ? new string(' ', _text.Length) : _text;
+        return _isHidden ? new string('_', _text.Length) : _text;
     }
 }
 
