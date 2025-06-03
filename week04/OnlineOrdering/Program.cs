@@ -9,8 +9,8 @@ class Program
         Customer customer1 = new Customer("Alice Johnson", address1);
 
         // Products for order 1
-        Product p1 = new Product("Notebook", "N001", 3.50m, 5);
-        Product p2 = new Product("Pen", "P010", 1.20m, 10);
+        Product p1 = new Product("Book of Mormon", "N001", 3.50m, 5);
+        Product p2 = new Product("Holy Bible", "P010", 1.20m, 10);
 
         // Order 1
         Order order1 = new Order(customer1);
@@ -29,8 +29,8 @@ class Program
         Customer customer2 = new Customer("Bob Smith", address2);
 
         // Products for order 2
-        Product p3 = new Product("Backpack", "B022", 45.00m, 1);
-        Product p4 = new Product("Water Bottle", "W007", 12.99m, 2);
+        Product p3 = new Product("Laptop", "B022", 45.00m, 1);
+        Product p4 = new Product("Samsung S8", "W007", 12.99m, 2);
 
         // Order 2
         Order order2 = new Order(customer2);
