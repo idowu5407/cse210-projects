@@ -16,6 +16,18 @@ public class Assignment
     // Public method to get the student name
     public string GetStudentName()
     {
-        return $"Student: {_studentName}, Topic: {_topic}";
+        return _studentName;
     }
+
+        public string GetTopic()
+    {
+        return _topic;
+    }
+
+    public string GetSummary()
+    {
+        return _studentName + " - " + _topic;
+    }
+    
+    
 }
