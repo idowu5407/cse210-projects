@@ -1,0 +1,2 @@
+0
+SimpleGoal|Bible study|Making time-table for reading|20|False
